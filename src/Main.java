@@ -5,6 +5,7 @@ public class Main {
         h1.calculateAge();
         h1.maximumHeartRate();
         h1.targetHeartRate();
+        h1.BMI();
 
 
     }

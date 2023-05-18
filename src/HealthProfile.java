@@ -3,7 +3,7 @@ import org.w3c.dom.ranges.Range;
 public class HealthProfile {
     private String firstName, lastName;
     private int age;
-    private int height;
+    private float height;
     private int weight;
     private String dateOfBirth, gender;
     private String years;
@@ -12,7 +12,7 @@ public class HealthProfile {
     int y1,m1,d1;
     int heartRate;
 
-    public HealthProfile(String firstName, String lastName, String dateOfBirth ,String gender,int age , int weight, int height){
+    public HealthProfile(String firstName, String lastName, String dateOfBirth ,String gender,int age , int weight, float height){
         setFirstName(firstName);
         setLastName(lastName);
         setDateOfBirth(dateOfBirth);
@@ -46,12 +46,12 @@ public class HealthProfile {
         this.age = age;
     }
 
-    public int getHeight() {
+    public float getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
+    public void setHeight(float height) {
+        this.height = height/100;
     }
 
     public int getWeight() {
@@ -102,6 +102,11 @@ public class HealthProfile {
         int startRange = heartRate/2;
         int endRange = (heartRate*4)/5;
         System.out.println("the target heart rate is in range of " + startRange +"-"+ endRange);
+    }
+    public void BMI(){
+       float bmi = weight/(height*height);
+        System.out.println(bmi);
+
     }
 
 }
