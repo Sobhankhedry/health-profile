@@ -4,9 +4,19 @@ public class HealthProfile {
     private int height;
     private int weight;
     private String dateOfBirth, gender;
+    private String years;
+    private String month;
+    private String day;
+    int y1,m1,d1;
 
-    public HealthProfile(String firstName, String lastName){
-
+    public HealthProfile(String firstName, String lastName, String dateOfBirth ,String gender,int age , int weight, int height){
+        setFirstName(firstName);
+        setLastName(lastName);
+        setDateOfBirth(dateOfBirth);
+        setGender(gender);
+        setAge(age);
+        setWeight(weight);
+        setHeight(height);
     }
 
     public String getFirstName() {
@@ -55,6 +65,14 @@ public class HealthProfile {
 
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+
+        years = dateOfBirth.substring(0,4);
+        y1 = Integer.parseInt(years);
+        month = dateOfBirth.substring(5,7);
+        m1 = Integer.parseInt(month);
+        day = dateOfBirth.substring(8,10);
+        d1 = Integer.parseInt(day);
+
     }
 
     public String getGender() {
@@ -64,4 +82,12 @@ public class HealthProfile {
     public void setGender(String gender) {
         this.gender = gender;
     }
+    public void calculateAge(){
+
+        y1 = 1402 - y1;
+        System.out.println(getFirstName() + " has " + y1 + " years old ");
+
+
+    }
+
 }
