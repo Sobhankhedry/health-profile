@@ -93,9 +93,9 @@ public class HealthProfile {
 
     }
 
-    public int maximumHeartRate(){
+    public void maximumHeartRate(){
          heartRate = 220 - y1;
-        return  heartRate;
+        System.out.println("maximum heart rate is "+ heartRate +" bpm");
     }
 
     public void targetHeartRate(){
@@ -105,8 +105,22 @@ public class HealthProfile {
     }
     public void BMI(){
        float bmi = weight/(height*height);
-        System.out.println(bmi);
+        System.out.println("body max index is " + bmi);
 
     }
+     public void showInformation(){
+        System.out.println("Person information: ");
+        System.out.println("name: "+ getFirstName() );
+        System.out.println("last name: "+ getLastName());
+        System.out.println("gender: " + getGender());
+        System.out.println("date of birth: "+ getDateOfBirth());
+        System.out.println("height: "+ getHeight());
+        System.out.println("weight: "+getWeight());
+        calculateAge();
+        BMI();
+        maximumHeartRate();
+        targetHeartRate();
+    }
+
 
 }
