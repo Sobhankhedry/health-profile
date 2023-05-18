@@ -1,3 +1,5 @@
+import org.w3c.dom.ranges.Range;
+
 public class HealthProfile {
     private String firstName, lastName;
     private int age;
@@ -8,6 +10,7 @@ public class HealthProfile {
     private String month;
     private String day;
     int y1,m1,d1;
+    int heartRate;
 
     public HealthProfile(String firstName, String lastName, String dateOfBirth ,String gender,int age , int weight, int height){
         setFirstName(firstName);
@@ -88,6 +91,17 @@ public class HealthProfile {
         System.out.println(getFirstName() + " has " + y1 + " years old ");
 
 
+    }
+
+    public int maximumHeartRate(){
+         heartRate = 220 - y1;
+        return  heartRate;
+    }
+
+    public void targetHeartRate(){
+        int startRange = heartRate/2;
+        int endRange = (heartRate*4)/5;
+        System.out.println("the target heart rate is in range of " + startRange +"-"+ endRange);
     }
 
 }
